@@ -16,7 +16,7 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements-windows.txt
       - name: Build desktop executable
-        run: python -m PyInstaller --noconfirm --clean --onedir --windowed --name AdwaaERP --add-data "templates;templates" --add-data "static;static" --collect-all webview desktop.py
+        run: python -m PyInstaller --noconfirm --clean --onedir --windowed --name AdwaaERP --collect-all webview desktop.py
       - name: Build Windows installer
         shell: pwsh
         run: '& "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" installer.iss'
